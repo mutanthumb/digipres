@@ -1,3 +1,9 @@
+"""
+Script loops over folders even subfolders looking for WAV files,
+first checking the BEXT to see if it's a DAT if not then
+it validates against a MediaConch policy, in this case "Audio-AMI-WAV.xml".
+"""
+
 import glob
 import os
 
