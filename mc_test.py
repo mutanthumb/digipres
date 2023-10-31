@@ -7,7 +7,7 @@ from pprint import pprint
 
 MC = MediaConch()
 
-# Add policy
+# Add MediaConch policy
 MC.add_policy("./ArchivematicaPolicies/Audio-AMI-WAV.xml")
 
 # Set display format (optional, default to xml)
@@ -41,9 +41,10 @@ for filename in glob.iglob('./validationFiles/**', recursive=True):
                             # print(type(report))
                             if "Outcome: fail" in report:
                                 print("Fail " + filename)
+                                # save report with WAV filename saved in same directory as WAV file
                                 with open(filename + "-FailReport.txt", "w") as text_file:
                                     text_file.write(report)
-                                # save report with WAV filename?
+
                             else:
                                 print("Pass")
                     else:
